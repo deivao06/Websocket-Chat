@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GADO ZAP</title>
+    <title>ZAP ZAP</title>
     <link rel="shortcut icon" href="misc/favicon.ico" />
 </head>
 <body>
@@ -36,7 +36,7 @@
 <script type="text/javascript" src="jquery-3.4.0.min.js"></script>
 <script>
     // ---------------------WEBSOCKET--------------------------
-    var conn = new WebSocket('ws://192.168.10.209:8080');
+    var conn = new WebSocket('ws://192.168.1.115:8080');
 
     conn.onopen = function(event) {
         $("#response").html('<p style="text-align: center; background: #aaffaa;">ONLINE!</p>');
