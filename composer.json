@@ -7,7 +7,8 @@
         }
     ],
     "require": {
-        "cboden/ratchet": "^0.4.1"
+        "cboden/ratchet": "^0.4.1",
+        "larapack/dd": "^1.1"
     },
     "autoload": {
         "psr-4": {

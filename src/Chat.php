@@ -19,7 +19,8 @@ class Chat implements MessageComponentInterface {
             'name' => 'GM',
             'message' => $conn->remoteAddress.' acabou de entrar, seja bem-vindo! '.$users.' Pessoas online.',
             'ip' => '666',
-            'color' => 'black'
+            'color' => 'black',
+            'position' => 'center'
         ];
         $this->sendMessage($msg);
     }
@@ -29,7 +30,17 @@ class Chat implements MessageComponentInterface {
         $decode->{'ip'} = $from->remoteAddress;
         $decode->{'color'} = $from->color;
 
-        $this->sendMessage($decode);
+        foreach($this->clients as $client){
+            if($from !== $client){
+                $decode->{'position'} = 'left';
+                $encode = json_encode($decode);
+                $client->send($encode);
+            }else{
+                $decode->{'position'} = 'right';
+                $encode = json_encode($decode);
+                $client->send($encode);
+            }
+        }
     }
 
     public function onClose(ConnectionInterface $conn) {
@@ -40,7 +51,8 @@ class Chat implements MessageComponentInterface {
             'name' => 'GM',
             'message' => $conn->remoteAddress.' acabou de sair, adeus! '.$users.' Pessoas online.',
             'ip' => '666',
-            'color' => 'black'
+            'color' => 'black',
+            'position' => 'center'
         ];
         $this->sendMessage($msg);
     }   
