@@ -16,3 +16,4 @@
         </form><br>
     </body>
 </html>
+<script src="js/register.js"></script>

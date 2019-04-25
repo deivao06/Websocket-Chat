@@ -16,5 +16,5 @@
         </form><br>
     </body>
 </html>
-<script src="js/helpers.js"></script>
+<script src="js/jquery-3.4.0.min.js"></script>
 <script src="js/login.js"></script>
