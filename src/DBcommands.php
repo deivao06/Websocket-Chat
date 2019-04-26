@@ -14,10 +14,8 @@ class DBcommands{
     public function selectAll(){
         $query = "SELECT * FROM users";
         $prepare = $this->database->connection->prepare($query);
-
         $execute = $prepare->execute();
         $fetchAll = $prepare->fetchAll();
-        
         return $fetchAll;
     }
 

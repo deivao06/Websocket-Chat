@@ -7,7 +7,7 @@ class Connection {
     public function __construct()
     {
         try{     
-            $this->connection = new \PDO('sqlite:storage/chat.db');
+            $this->connection = new \PDO('sqlite:../../storage/chat.db');
         }catch (\PDOException $e){
              echo $e->getMessage();
         }
