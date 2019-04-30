@@ -1,3 +1,11 @@
+<?php
+require 'vendor/autoload.php';
+
+session_start();
+if($_SESSION['logged'] == false){
+    header('location: index.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 <style>
@@ -13,17 +21,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ZAP ZAP</title>
-    <link rel="shortcut icon" href="misc/favicon.ico" />
+    <link rel="shortcut iconk" href="misc/favicon.ico" />
 </head>
 <body>
-    <div id="log">
-
-    </div>
     <div style="width: 600px; margin: 0 auto; background: white; padding: 10px">
-        <div style="padding-bottom: 10px">
-            <span>Nome: </span>
-            <input type="text" id="name" autocomplete="off">
-        </div>
+        <input type="hidden" id="name" autocomplete="off" value="<?= $_SESSION['name'] ?>">
         <div style="border: 1px solid black; height: 500px; overflow-y: scroll;" name="" id="response" cols="30" rows="10"></div>
         <form name="form-teste" action="" style="text-align: right; margin-top: 5px;">
             <input type="text" id="text" autocomplete="off">
@@ -35,6 +37,7 @@
 </html>
 <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
 <script>
+$(document).ready(function(){
     // ---------------------WEBSOCKET--------------------------
     var conn = new WebSocket('ws://192.168.10.209:8080');
 
@@ -85,4 +88,5 @@
         $('#text').val('');
     });
     // -------------------MESSAGE FORM-------------------------
+})
 </script>
