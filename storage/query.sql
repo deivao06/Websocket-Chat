@@ -4,3 +4,4 @@
 --     pass TEXT,
 --     admin INTEGER
 -- );
+UPDATE users set admin = 1 where id = 1;

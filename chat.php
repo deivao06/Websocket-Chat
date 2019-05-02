@@ -21,11 +21,14 @@ if($_SESSION['logged'] == false){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ZAP ZAP</title>
-    <link rel="shortcut iconk" href="misc/favicon.ico" />
+    <link rel="shortcut icon" href="misc/favicon.ico" />
 </head>
 <body>
     <div style="width: 600px; margin: 0 auto; background: white; padding: 10px">
         <input type="hidden" id="name" autocomplete="off" value="<?= $_SESSION['name'] ?>">
+        <form action="logout.php">
+            <button id="logout">Logout</button><br><br>
+        </form>
         <div style="border: 1px solid black; height: 500px; overflow-y: scroll;" name="" id="response" cols="30" rows="10"></div>
         <form name="form-teste" action="" style="text-align: right; margin-top: 5px;">
             <input type="text" id="text" autocomplete="off">

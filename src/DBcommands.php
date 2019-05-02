@@ -44,12 +44,12 @@ class DBcommands{
         $query = "SELECT * FROM users WHERE name = '$name' and pass = '$pass'";
         $prepare = $this->database->connection->prepare($query);
         $execute = $prepare->execute();
-        $fetchAll = $prepare->fetchAll();
+        $fetchAll = $prepare->fetch();
 
         if(empty($fetchAll)){
             return false;
         }else{
-            return true;
+            return $fetchAll;
         }
     }
 
@@ -57,7 +57,7 @@ class DBcommands{
         $query = "SELECT * FROM users WHERE id = ?";
         $prepare = $this->database->connection->prepare($query);
         $execute = $prepare->execute([$id]);
-        $fetchAll = $prepare->fetchAll();
+        $fetchAll = $prepare->fetch();
 
         return $fetchAll;
     }

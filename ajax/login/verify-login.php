@@ -1,6 +1,6 @@
 <?php
-session_start();
 require dirname(__DIR__) . '../../vendor/autoload.php';
+session_start();
 use MyApp\DBcommands;
 
 $commands = new DBcommands;
@@ -9,10 +9,8 @@ $verifyLogin = $commands->verifyLogin($_POST['username'],  $_POST['password']);
 
 if($verifyLogin){
     $_SESSION['logged'] = true;
-    $_SESSION['name'] = $_POST['username'];
-    if($_POST['username'] == 'admin'){
-        $_SESSION['admin'] = true;
-    }
+    $_SESSION['userId'] = $verifyLogin['id'];
+
     print json_encode([
         'error' => 0,
         'message' => 'Usuário Encontrado!'
