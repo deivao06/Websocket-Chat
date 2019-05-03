@@ -1,18 +1,22 @@
 <?php
 require 'vendor/autoload.php';
 use MyApp\DBcommands;
+
 session_start();
 if(!$_SESSION['logged']){
     header('location: index.php');
 }
 
 $commands = new DBcommands;
+
 $validate = $commands->selectWhereId($_SESSION['userId']);
-if($validade['admin'] == '0'){
+$admin = $validate['admin'];
+
+if($admin == 0){
     header('location: chat.php');
 }
-$users = $commands->selectAll();
 
+$users = $commands->selectAll();
 ?>
 <table border="1">
     <tr>

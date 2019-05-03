@@ -9,6 +9,7 @@ $verifyLogin = $commands->verifyLogin($_POST['username'],  $_POST['password']);
 
 if($verifyLogin){
     $_SESSION['logged'] = true;
+    $_SESSION['name'] = $_POST['username'];
     $_SESSION['userId'] = $verifyLogin['id'];
 
     print json_encode([
