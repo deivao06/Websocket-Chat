@@ -26,13 +26,14 @@ if($_SESSION['logged'] == false){
 <body>
     <div style="width: 600px; margin: 0 auto; background: white; padding: 10px">
         <input type="hidden" id="name" autocomplete="off" value="<?= $_SESSION['name'] ?>">
-        <form action="logout.php">
-            <button id="logout">Logout</button><br><br>
-        </form>
+        <div id="status"></div>
         <div style="border: 1px solid black; height: 500px; overflow-y: scroll;" name="" id="response" cols="30" rows="10"></div>
-        <form name="form-teste" action="" style="text-align: right; margin-top: 5px;">
+        <form name="form-send" action="" style="text-align: right; margin-top: 5px;float: right;">
             <input type="text" id="text" autocomplete="off">
             <button type="submit">Enviar</button>
+        </form>
+        <form action="logout.php" style="float: right; padding: 4.5px;">
+            <button id="logout">Logout</button><br><br>
         </form>
     </div>
 </body>
@@ -45,7 +46,7 @@ $(document).ready(function(){
     var conn = new WebSocket('ws://192.168.10.209:8080');
 
     conn.onopen = function(event) {
-        $("#response").html('<p style="text-align:center; background: #aaffaa;">ONLINE!</p>');
+        $("#status").html('<p style="text-align:center; background: #aaffaa;">ONLINE!</p>');
     };
 
     conn.onmessage = function(event) {
@@ -69,12 +70,12 @@ $(document).ready(function(){
     };
 
     conn.onclose = function(event) {
-        $("#response").html('<p style="text-align:center; background: #e84949">OFFLINE!</p>');
+        $("#status").html('<p style="text-align:center; background: #e84949">OFFLINE!</p>');
     }
     // ---------------------WEBSOCKET--------------------------
 
     // -------------------MESSAGE FORM-------------------------
-    $("form[name='form-teste']").on('submit', function(event) {
+    $("form[name='form-send']").on('submit', function(event) {
         event.preventDefault();
 
         var message = $("#text").val().trim();
