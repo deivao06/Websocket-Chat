@@ -8,8 +8,7 @@
     ],
     "require": {
         "cboden/ratchet": "^0.4.1",
-        "larapack/dd": "^1.1",
-        "ext-pdo_sqlite": "*"
+        "larapack/dd": "^1.1"
     },
     "require-dev": {
         "heroku/heroku-buildpack-php": "*"
