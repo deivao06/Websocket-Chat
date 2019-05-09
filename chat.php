@@ -43,7 +43,7 @@ if($_SESSION['logged'] == false){
 <script>
 $(document).ready(function(){
     // ---------------------WEBSOCKET--------------------------
-    var conn = new WebSocket('wss://gado-zap.herokuapp.com');
+    var conn = new WebSocket('wss://192.168.10.209:8080');
 
     conn.onopen = function(event) {
         $("#status").html('<p style="text-align:center; background: #aaffaa;">ONLINE!</p>');
