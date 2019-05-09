@@ -10,6 +10,9 @@
         "cboden/ratchet": "^0.4.1",
         "larapack/dd": "^1.1"
     },
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "*"
+    },
     "autoload": {
         "psr-4": {
             "MyApp\\": "src"
