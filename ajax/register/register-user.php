@@ -4,7 +4,17 @@ use MyApp\DBcommands;
 
 $commands = new DBcommands;
 
-$insert = $commands->insert($_POST['username-register'], $_POST['password-register']);
+$verify = $commands->verifyRegister($_POST['username-register']);
+
+if($verify == true){
+    $insert = $commands->insert($_POST['username-register'], $_POST['password-register']);
+}else{
+    echo json_encode([
+        'message' => 'Usuário ja existente!',
+        'error' => 1
+    ]);
+    exit;
+}
 
 if($insert){
     echo json_encode([
@@ -17,6 +27,3 @@ if($insert){
         'error' => 1
     ]);
 }
-
-
-

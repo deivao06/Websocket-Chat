@@ -53,6 +53,19 @@ class DBcommands{
         }
     }
 
+    public function verifyRegister($name){
+        $query = "SELECT * FROM users WHERE name = ?";
+        $prepare = $this->database->connection->prepare($query);
+        $execute = $prepare->execute([$name]);
+        $fetch = $prepare->fetch();
+
+        if(!empty($fetch)){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     public function selectWhereId($id){
         $query = "SELECT * FROM users WHERE id = ?";
         $prepare = $this->database->connection->prepare($query);
