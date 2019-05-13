@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Cadastrar</title>
+        <link rel="shortcut icon" href="../misc/favicon.ico" />
     </head>
     <body>
         <p><strong>CADASTRAR</strong></p>

@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Login</title>
+        <link rel="shortcut icon" href="../misc/favicon.ico" />
     </head>
     <body>
         <p><strong>LOGIN</strong></p>

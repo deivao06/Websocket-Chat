@@ -11,6 +11,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Alterar</title>
+        <link rel="shortcut icon" href="../misc/favicon.ico" />
     </head>
     <body>
         <p><strong>ALTERAR</strong></p>
