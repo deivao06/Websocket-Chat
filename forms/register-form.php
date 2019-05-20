@@ -9,9 +9,9 @@
         <p><strong>CADASTRAR</strong></p>
         <form name="register-form" method="post">
             <label for="">Usuario: </label>
-            <input name="username-register" type="text" id="username-register" autocomplete="off"><br><br>
+            <input name="username-register" type="text" id="username-register" autocomplete="off" required><br><br>
             <label for="">Senha: </label>
-            <input name="password-register" type="password" id="password-register" autocomplete="off"><br><br>
+            <input name="password-register" type="password" id="password-register" autocomplete="off" required><br><br>
             <button type="submit">Cadastrar</button>
             <a href="../index.php">Voltar</a>
         </form><br>

@@ -14,19 +14,37 @@ class Chat implements MessageComponentInterface {
         $conn->{'color'} = $this->random_color();
         $this->clients->attach($conn);
 
+        $online = [];
+        foreach($this->clients as $client){
+            $online[] = $client->remoteAddress;
+        }
+
         $users = $this->countUsers();
         $msg = [
-            'name' => 'GM',
-            'message' => $conn->remoteAddress.' acabou de entrar, seja bem-vindo! '.$users.' Pessoas online.',
-            'ip' => '666',
+            'name' => 'GADOBOT',
+            'message' => $conn->remoteAddress." acabou de entrar, seja bem-vindo! <br>".$users.' Pessoas online.',
+            'ip' => 'bot',
             'color' => 'black',
-            'position' => 'center'
+            'position' => 'center',
+            'online' => $online
         ];
         $this->sendMessage($msg);
+
+        echo "{$conn->remoteAddress} acabou de logar. {$users} online! \n";
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
         $decode = json_decode($msg);
+
+        if($this->isImageUrl($decode) == "yt"){
+            $decode->{'message'} = "<iframe width='300' height='300' src='".str_replace("watch?v=", "embed/", $decode->message)."'></iframe>";
+        }
+
+        if($this->isImageUrl($decode) == "img"){
+            $decode->{'message'} = "<img src='{$decode->message}' width='250'>";
+        }
+        
+
         $decode->{'ip'} = $from->remoteAddress;
         $decode->{'color'} = $from->color;
 
@@ -46,15 +64,23 @@ class Chat implements MessageComponentInterface {
     public function onClose(ConnectionInterface $conn) {
         $this->clients->detach($conn);
 
+        $online = [];
+        foreach($this->clients as $client){
+            $online[] = $client->remoteAddress;
+        }
+
         $users = $this->countUsers();
         $msg = [
-            'name' => 'GM',
-            'message' => $conn->remoteAddress.' acabou de sair, adeus! '.$users.' Pessoas online.',
-            'ip' => '666',
+            'name' => 'GADOBOT',
+            'message' => $conn->remoteAddress." acabou de sair, adeus! <br>".$users.' Pessoas online.',
+            'ip' => 'bot',
             'color' => 'black',
-            'position' => 'center'
+            'position' => 'center',
+            'online' => $online
         ];
         $this->sendMessage($msg);
+
+        echo "{$conn->remoteAddress} acabou de sair. {$users} online! \n";
     }   
 
     public function onError(ConnectionInterface $conn, \Exception $e) {
@@ -79,5 +105,33 @@ class Chat implements MessageComponentInterface {
 
     public function countUsers() {
         return count($this->clients);
+    }
+
+    public function isImageUrl($msg){
+        $explode = explode('//', $msg->message);
+
+        if($explode[0] == "https:" || $explode[0] == "http:"){
+            $searchYoutubeVideo = strpos($msg->message,"watch?");
+
+            if($searchYoutubeVideo !== false){
+                return "yt";
+            }
+
+            foreach(get_headers($msg->message) as $header){
+                $searchContentType = strpos($header,'Content-Type');
+
+                if($searchContentType !== false){
+                    $searchImage = strpos($header,'image');
+                    if($searchImage === false){
+                        return false;
+                    }else{
+                        return "img";
+                    }
+                }
+            }
+            
+        }else{
+            return false;
+        }
     }
 }

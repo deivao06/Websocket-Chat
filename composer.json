@@ -9,7 +9,8 @@
     "require": {
         "cboden/ratchet": "^0.4.1",
         "larapack/dd": "^1.1",
-        "ext-pdo_sqlite": "*"
+        "ext-pdo_sqlite": "*",
+        "ratchet/pawl": "^0.3.4"
     },
     "autoload": {
         "psr-4": {
