@@ -1,4 +1,5 @@
-<?php
+$database = file_get_contents("database.json");
+$cards = json_decode($database);<?php
 $database = file_get_contents("database.json");
 $cards = json_decode($database);
 

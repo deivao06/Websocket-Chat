@@ -5,7 +5,7 @@ use MyApp\DBcommands;
 
 $commands = new DBcommands;
 
-$verifyLogin = $commands->verifyLogin($_POST['username'],  $_POST['password']);
+$verifyLogin = $commands->login($_POST['username'],  $_POST['password']);
 
 if($verifyLogin == true){
     $_SESSION['logged'] = true;

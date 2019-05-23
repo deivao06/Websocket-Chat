@@ -33,37 +33,55 @@ class DBcommands{
         return $prepare->execute([$name,$pass,$id]);
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $query = "DELETE FROM users WHERE id = ?";
         $prepare = $this->database->connection->prepare($query);
 
         return $prepare->execute([$id]);
     }
 
-    public function verifyLogin($name, $pass){
-        $query = "SELECT * FROM users WHERE name = '$name' and pass = '$pass'";
+    public function verifyLogin()
+    {
+        if (empty($_COOKIE['loginHash'])) {
+            return false;
+        }
+
+        if (empty($_SESSION['userId'])) {
+            return false;
+        }
+        
+        $user = $this->selectWhereId($_SESSION['userId']);
+
+        if (!is_array($user)) {
+            return false;
+        }
+
+        if ($user['loginHash'] != $_COOKIE['loginHash']) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function login($name, $pass){
+        $query = "SELECT * FROM users WHERE name = ? and pass = ?";
         $prepare = $this->database->connection->prepare($query);
-        $execute = $prepare->execute();
+        $execute = $prepare->execute([$name, $pass]);
         $fetchAll = $prepare->fetch();
 
-        if(!empty($_COOKIE)){
-            if($fetchAll['loginHash'] != $_COOKIE[$name]){            
-                return 'logged';
-            }
-        }
-
-        $hash = bin2hex(random_bytes(16));
-        
-        $queryUpdate = "UPDATE users set loginHash = '$hash' WHERE name = '$name'";
-        $prepareUpdate = $this->database->connection->prepare($queryUpdate);
-        
-        if(empty($fetchAll)){
-            return false;
-        }else{
+        if(!empty($fetchAll)){
+            $hash = bin2hex(random_bytes(16));
+            $queryUpdate = "UPDATE users set loginHash = '$hash' WHERE name = '$name'";
+            $prepareUpdate = $this->database->connection->prepare($queryUpdate);
             $prepareUpdate->execute();
-            setcookie($name, $hash, 0 ,"/");
+            
+            setcookie('loginHash', $hash, 0 ,"/");
             return $fetchAll;
+        }else{
+            return false;
         }
+        
     }
 
     public function verifyRegister($name){
@@ -83,6 +101,15 @@ class DBcommands{
         $query = "SELECT * FROM users WHERE id = ?";
         $prepare = $this->database->connection->prepare($query);
         $execute = $prepare->execute([$id]);
+        $fetchAll = $prepare->fetch();
+
+        return $fetchAll;
+    }
+
+    public function selectWhereUsername($name){
+        $query = "SELECT * FROM users WHERE name = ?";
+        $prepare = $this->database->connection->prepare($query);
+        $execute = $prepare->execute([$name]);
         $fetchAll = $prepare->fetch();
 
         return $fetchAll;

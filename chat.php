@@ -1,7 +1,10 @@
 <?php
-require 'vendor/autoload.php';
+require __DIR__ . '/boostrap.php';
 
-session_start();
+use MyApp\DBcommands;
+
+$commands = new DBcommands;
+
 if($_SESSION['logged'] == false){
     header('location: index.php');
 }
