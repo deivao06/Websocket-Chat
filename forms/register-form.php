@@ -1,3 +1,7 @@
+<?php
+require '../vendor/autoload.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,6 +12,7 @@
     <body>
         <p><strong>CADASTRAR</strong></p>
         <form name="register-form" method="post">
+            <?= \Volnix\CSRF\CSRF::getHiddenInputString('verify-register') ?>
             <label for="">Usuario: </label>
             <input name="username-register" type="text" id="username-register" autocomplete="off" required><br><br>
             <label for="">Senha: </label>

@@ -1,6 +1,15 @@
 <?php
 require dirname(__DIR__) . '../../vendor/autoload.php';
 use MyApp\DBcommands;
+session_start();
+
+if ( !\Volnix\CSRF\CSRF::validate($_POST, 'verify-register') ) {
+    echo json_encode([
+        'message' => 'Use o FORMULÁRIO, Obrigado.',
+        'error' => 1
+    ]);
+    exit;
+}
 
 $commands = new DBcommands;
 

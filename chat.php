@@ -28,7 +28,8 @@ if($_SESSION['logged'] == false){
         <input type="hidden" id="name" autocomplete="off" value="<?= $_SESSION['name'] ?>">
         <div>
             <div id="status"></div>
-            <form action="logout.php" style="float: right; padding: 4.5px; margin-right: 15px">
+            <form action="logout.php" method="post" style="float: right; padding: 4.5px; margin-right: 15px">
+                <input type="hidden" name="name" value="<?= $_SESSION['name'] ?>">
                 <button id="logout">Logout</button><br><br>
             </form>
         </div>
@@ -75,9 +76,12 @@ $(document).ready(function(){
                 $('#online').append(value + "\n");
             });
         }else if(data.type == 'card'){
+            var images = "";
+
             $.each(data.message, function(key, value){
-                $('#response').append('<p style="text-align:'+data.position+'"><strong style="color:'+data.color+'">'+name+'</strong>:  <img src="'+value+'"></p>')
+                images += '<img height=350 src="'+value+'">';
             });
+            $('#response').append('<p style="text-align:'+data.position+'; display:flex; overflow:scroll; align-items: center;"><strong style="color:'+data.color+'">'+name+'</strong>:'+images+'</p>')
         }else{
             document.title = "Mensagem de: " + name;
             $('#response').append('<p style="text-align:'+data.position+'"><strong style="color:'+data.color+'">'+name+'</strong>: '+data.message+'</p>')

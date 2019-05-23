@@ -9,17 +9,21 @@ $loop = \React\EventLoop\Factory::create();
     $conn->on('message', function($msg) use ($conn, $cards) {
         $msgObj = json_decode($msg);
 
-        echo $msgObj->name.": ".$msgObj->message."\n";
-
         if($msgObj->name != "GADOBOT"){
+            echo $msgObj->name.": ".$msgObj->message."\n";
             $msgExplode = explode(" ", $msgObj->message);
     
             if(startsWith("!", $msgExplode[0])){
-    
+                
                 if(commandSplit($msgExplode[0]) == "card"){
                     if($msgExplode[1] == "name"){
 
-                        $search = searchCardName($msgExplode[2], $cards);
+                        unset($msgExplode[0]);
+                        unset($msgExplode[1]);
+
+                        $msgImplode = implode(" ", $msgExplode);
+
+                        $search = searchCardName($msgImplode, $cards);
                         $searchObj = [
                             "type" => "card",
                             "name" => "GADOBOT",
@@ -61,9 +65,12 @@ function commandSplit($command){
 function searchCardName($cardName, $cards = []){
     $encounteredCards = [];
     foreach($cards[0] as $card){
-        $searchName = strpos($card->name, $cardName);
+        $cardLower = strtolower($card->name);
+        $cardNameLower = strtolower($cardName);
+
+        $searchName = strpos($cardLower, $cardNameLower);
         if($searchName !== false){
-            $encounteredCards[] = "misc/images/small/{$card->id}.jpg";
+            $encounteredCards[] = "misc/images/big/{$card->id}.jpg";
         }
     }
 

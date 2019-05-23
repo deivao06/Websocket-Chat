@@ -46,9 +46,22 @@ class DBcommands{
         $execute = $prepare->execute();
         $fetchAll = $prepare->fetch();
 
+        if(!empty($_COOKIE)){
+            if($fetchAll['loginHash'] != $_COOKIE[$name]){            
+                return 'logged';
+            }
+        }
+
+        $hash = bin2hex(random_bytes(16));
+        
+        $queryUpdate = "UPDATE users set loginHash = '$hash' WHERE name = '$name'";
+        $prepareUpdate = $this->database->connection->prepare($queryUpdate);
+        
         if(empty($fetchAll)){
             return false;
         }else{
+            $prepareUpdate->execute();
+            setcookie($name, $hash, 0 ,"/");
             return $fetchAll;
         }
     }

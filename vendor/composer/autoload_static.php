@@ -19,6 +19,10 @@ class ComposerStaticInitef235fc8b0a4c4c14bd7bed8e5dc5e94
     );
 
     public static $prefixLengthsPsr4 = array (
+        'V' => 
+        array (
+            'Volnix\\CSRF\\' => 12,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php72\\' => 23,
@@ -55,6 +59,10 @@ class ComposerStaticInitef235fc8b0a4c4c14bd7bed8e5dc5e94
     );
 
     public static $prefixDirsPsr4 = array (
+        'Volnix\\CSRF\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/volnix/csrf/src',
+        ),
         'Symfony\\Polyfill\\Php72\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php72',

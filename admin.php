@@ -31,6 +31,7 @@ $users = $commands->selectAll();
             <th>Username</th>
             <th>Password</th>
             <th>Admin</th>
+            <th>loginHash</th>
             <th>Options</th>
         <?php foreach($users as $user) { ?>
             <tr>
@@ -39,6 +40,7 @@ $users = $commands->selectAll();
     
                 <td><?= $user['pass'] ?></td>
                 <td><?= $user['admin'] ?></td>
+                <td><?= $user['loginHash'] ?></td>
                 <td>
                     <a href="forms/alter-form.php?id=<?= $user['id'] ?>" class="alter">Alterar</a>
                     <a href="ajax/delete/delete-user.php?id=<?= $user['id'] ?>" class="delete">Delete</a>
