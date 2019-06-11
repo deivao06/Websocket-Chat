@@ -1,7 +1,17 @@
 <?php
+session_start();
 require __DIR__ . '/../../bootstrap.php';
 
 use MyApp\UserCommands;
+
+
+if ( !\Volnix\CSRF\CSRF::validate($_POST, 'verify-register') ) {
+    echo json_encode([
+        'error' => 1,
+        'message' => 'Use o FORMULÁRIO, Obrigado.'
+    ]);
+    exit;
+}
 
 if (verifyIfUsernameExists($_POST['register-username'])){
     print json_encode([
