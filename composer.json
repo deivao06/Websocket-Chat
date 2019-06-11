@@ -11,7 +11,8 @@
         "larapack/dd": "^1.1",
         "ext-pdo_sqlite": "*",
         "ratchet/pawl": "^0.3.4",
-        "volnix/csrf": "~1.0"
+        "volnix/csrf": "~1.0",
+        "ext-json": "*"
     },
     "autoload": {
         "psr-4": {

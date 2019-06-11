@@ -22,10 +22,11 @@ class Chat implements MessageComponentInterface {
         $users = $this->countUsers();
         $msg = [
             'name' => 'GADOBOT',
-            'message' => $conn->remoteAddress." acabou de entrar, seja bem-vindo! <br>".$users.' Pessoas online.',
+            'message' => $conn->remoteAddress." acabou de entrar, seja bem-vindo! ".$users.' Pessoas online.',
             'ip' => 'bot',
             'color' => 'black',
-            'position' => 'center',
+            'backcolor' => "#bbc1c8",
+            'position' => 'float-left',
             'online' => $online
         ];
         $this->sendMessage($msg);
@@ -43,18 +44,19 @@ class Chat implements MessageComponentInterface {
         if($this->isImageUrl($decode) == "img"){
             $decode->{'message'} = "<img src='{$decode->message}' width='250'>";
         }
-        
 
         $decode->{'ip'} = $from->remoteAddress;
         $decode->{'color'} = $from->color;
 
         foreach($this->clients as $client){
             if($from !== $client){
-                $decode->{'position'} = 'left';
+                $decode->{'position'} = 'float-left';
+                $decode->{'backcolor'} = "#bbc1c8";
                 $encode = json_encode($decode);
                 $client->send($encode);
             }else{
-                $decode->{'position'} = 'right';
+                $decode->{'position'} = 'float-right';
+                $decode->{'backcolor'} = "#93b7de";
                 $encode = json_encode($decode);
                 $client->send($encode);
             }
@@ -72,10 +74,11 @@ class Chat implements MessageComponentInterface {
         $users = $this->countUsers();
         $msg = [
             'name' => 'GADOBOT',
-            'message' => $conn->remoteAddress." acabou de sair, adeus! <br>".$users.' Pessoas online.',
+            'message' => $conn->remoteAddress." acabou de sair! <br>".$users.' Pessoas online.',
             'ip' => 'bot',
             'color' => 'black',
-            'position' => 'center',
+            'backcolor' => "#bbc1c8",
+            'position' => 'float-left',
             'online' => $online
         ];
         $this->sendMessage($msg);
