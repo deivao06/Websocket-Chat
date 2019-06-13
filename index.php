@@ -19,10 +19,10 @@
         .nav-bar-stack {
             background: white;
         }
-        body{
-            background-image: url("/misc/235940-descubra-as-melhores-estrategias-nutricionais-para-gado-de-corte-933x508.jpg");
-            background-size: cover;
-        }
+        /*body{*/
+        /*    background-image: url("/misc/235940-descubra-as-melhores-estrategias-nutricionais-para-gado-de-corte-933x508.jpg");*/
+        /*    background-size: cover;*/
+        /*}*/
     </style>
     <body style="padding: 10px">
         <div class="container-fluid" style="padding-top: 25px;">

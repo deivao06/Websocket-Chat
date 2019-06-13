@@ -1,6 +1,10 @@
 <?php
 session_start();
 require 'bootstrap.php';
+if (!isset($_SESSION['isLogged']) || !$_SESSION['isLogged']){
+    header("Location: index.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-Br">
@@ -18,10 +22,10 @@ require 'bootstrap.php';
         min-height: 72vh;
         max-height: 72vh;
     }
-    body{
-        background-image: url("/misc/235940-descubra-as-melhores-estrategias-nutricionais-para-gado-de-corte-933x508.jpg");
-        background-size: cover;
-    }
+    /*body{*/
+    /*    background-image: url("/misc/235940-descubra-as-melhores-estrategias-nutricionais-para-gado-de-corte-933x508.jpg");*/
+    /*    background-size: cover;*/
+    /*}*/
 </style>
 <body style="padding: 10px">
     <div class="container-fluid" style="padding-top: 25px;">

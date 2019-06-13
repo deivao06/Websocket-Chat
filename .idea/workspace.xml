@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/ajax/forms/alter-user.php" line="5" mnemonic="4" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8591eee8-99b6-4824-bb7f-8aa85d5a6e0a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ajax/alter/user.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajax/delete/user.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajax/forms/alter-user.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/register/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/register/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/chat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/register-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/register-user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserCommands.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserCommands.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/chat.db" beforeDir="false" afterPath="$PROJECT_DIR$/storage/chat.db" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,34 +41,71 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="chat.db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="chat.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="chat.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="68" column="119" selection-start-line="68" selection-start-column="119" selection-end-line="68" selection-end-column="119" />
+            <state relative-caret-position="-29">
+              <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chat.php">
+        <entry file="file://$PROJECT_DIR$/js/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-216">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="882">
+              <caret line="49" column="42" lean-forward="true" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ajax/forms/delete-user.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ajax/delete/user.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UserCommands.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="84" column="19" lean-forward="true" selection-start-line="84" selection-start-column="19" selection-end-line="85" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -98,17 +146,22 @@
         <option value="$PROJECT_DIR$/js/login.js" />
         <option value="$PROJECT_DIR$/src/Chat.php" />
         <option value="$PROJECT_DIR$/ajax/login/user.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/src/UserCommands.php" />
-        <option value="$PROJECT_DIR$/chat.php" />
         <option value="$PROJECT_DIR$/js/chat.js" />
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9bb7c796-0bdc-457d-89b1-2cc66367ffae/console.sql" />
-        <option value="$PROJECT_DIR$/js/register-user.js" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/ajax/register/user.php" />
+        <option value="$PROJECT_DIR$/chat.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/register.php" />
+        <option value="$PROJECT_DIR$/ajax/forms/alter-user.php" />
+        <option value="$PROJECT_DIR$/ajax/alter/user.php" />
+        <option value="$PROJECT_DIR$/js/register-user.js" />
         <option value="$PROJECT_DIR$/admin.php" />
+        <option value="$PROJECT_DIR$/src/UserCommands.php" />
+        <option value="$PROJECT_DIR$/ajax/forms/delete-user.php" />
+        <option value="$PROJECT_DIR$/js/admin.js" />
+        <option value="$PROJECT_DIR$/ajax/delete/user.php" />
       </list>
     </option>
   </component>
@@ -141,17 +194,15 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1024" />
-    <option name="y" value="537" />
-    <option name="width" value="1366" />
-    <option name="height" value="704" />
+    <option name="y" value="-2" />
+    <option name="width" value="1024" />
+    <option name="height" value="1282" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -168,12 +219,29 @@
               <item name="Websocket-Chat" type="b2602c69:ProjectViewProjectNode" />
               <item name="Websocket-Chat" type="462c0819:PsiDirectoryNode" />
               <item name="ajax" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
+              <item name="alter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Websocket-Chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Websocket-Chat" type="462c0819:PsiDirectoryNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="forms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Websocket-Chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Websocket-Chat" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Websocket-Chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Websocket-Chat" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -212,7 +280,7 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3a970d04" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@9ba70fdc" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -241,20 +309,25 @@
       <workItem from="1559825029925" duration="17065000" />
       <workItem from="1559916997543" duration="3447000" />
       <workItem from="1560259554450" duration="10504000" />
+      <workItem from="1560343549896" duration="7192000" />
+      <workItem from="1560354684031" duration="1644000" />
+      <workItem from="1560360562710" duration="315000" />
+      <workItem from="1560440188356" duration="2033000" />
+      <workItem from="1560452815105" duration="6479000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72785000" />
+    <option name="totallyTimeSpent" value="90448000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1024" y="537" width="1366" height="704" extended-state="6" />
+    <frame x="0" y="-2" width="1024" height="1282" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="2" weight="0.43782577" />
-      <window_info id="Database" order="3" weight="0.32911393" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.5874126" />
+      <window_info id="Database" order="3" weight="0.32867134" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32928944" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -268,7 +341,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32957503" />
-      <window_info anchor="bottom" id="Services" order="13" weight="0.328125" />
+      <window_info anchor="bottom" id="Services" order="13" weight="0.3275563" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -324,20 +397,6 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/aria.rnc" />
     <entry file="file://$PROJECT_DIR$/js/chat.php" />
-    <entry file="file://$PROJECT_DIR$/src/Chat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1422">
-          <caret line="80" column="39" lean-forward="true" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/login/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="2" lean-forward="true" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -352,46 +411,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserCommands.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="18" selection-start-line="17" selection-end-line="18" />
-          <folding>
-            <element signature="n#style#0;n#h5#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#b#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h5#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9bb7c796-0bdc-457d-89b1-2cc66367ffae/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="33" lean-forward="true" selection-start-column="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://9bb7c796-0bdc-457d-89b1-2cc66367ffae/schema/main/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="6bcff6a9-1c5c-4083-b2e7-f0bfbca97a53">
-          <filtering>
-            <filter text="" />
-          </filtering>
         </state>
       </provider>
     </entry>
@@ -402,13 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/register-user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -416,10 +432,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
+    <entry file="file://$PROJECT_DIR$/src/Chat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        <state relative-caret-position="396">
+          <caret line="80" column="39" lean-forward="true" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/login/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="2" lean-forward="true" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -430,24 +467,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chat.php">
+    <entry file="file://$PROJECT_DIR$/js/chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="324">
+          <caret line="18" selection-start-line="17" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://9bb7c796-0bdc-457d-89b1-2cc66367ffae/schema/main/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="08f053f7-db5c-4564-b4f2-5d82ffff9751">
+          <filtering>
+            <filter text="" />
+          </filtering>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+        <state relative-caret-position="867">
+          <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/register-user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="82" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="921">
+          <caret line="59" column="11" lean-forward="true" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="68" column="119" selection-start-line="68" selection-start-column="119" selection-end-line="68" selection-end-column="119" />
+        <state relative-caret-position="-29">
+          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/alter/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/forms/alter-user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserCommands.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="84" column="19" lean-forward="true" selection-start-line="84" selection-start-column="19" selection-end-line="85" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="49" column="42" lean-forward="true" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/delete/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/forms/delete-user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
