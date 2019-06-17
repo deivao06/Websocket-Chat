@@ -56,7 +56,7 @@ class Chat implements MessageComponentInterface {
                 $client->send($encode);
             }else{
                 $decode->{'position'} = 'float-right';
-                $decode->{'backcolor'} = "#93b7de";
+                $decode->{'backcolor'} = "#e0e2e4";
                 $encode = json_encode($decode);
                 $client->send($encode);
             }

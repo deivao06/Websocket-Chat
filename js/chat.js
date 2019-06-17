@@ -10,7 +10,19 @@ $(document).ready(function () {
     };
     conn.onmessage = function (event) {
         var data = JSON.parse(event.data);
-        $("#messages-area").append("<div class='col-md-6 "+data.position+"' style='clear:both;margin-bottom:10px;background:"+data.backcolor+";padding: 15px;border-radius: 25px'><b style='color:"+data.color+"'>" + data.name + "</b><br>"+ data.message +"</div>");
+        if (typeof data.type !== 'undefined' && data.type === 'card'){
+            var images = "";
+            if (typeof data.message !== 'string'){
+                $.each(data.message, function(key, value){
+                    images += '<a href="'+value+'" target="_blank"><img height=350 src="'+value+'"></a>';
+                });
+                $("#messages-area").append("<div class='col-md-7 "+data.position+"' style='clear:both;margin-bottom:10px;background:"+data.backcolor+";padding: 15px;border-radius: 25px;display: flex;overflow: auto;align-items: center'><b style='color:"+data.colorImportant+"'>" + data.name + "</b><br>"+ images +"</div>");
+            }else{
+                $("#messages-area").append("<div class='col-md-6 "+data.position+"' style='clear:both;margin-bottom:10px;background:"+data.backcolor+";padding: 15px;border-radius: 25px'><b style='color:"+data.color+"'>" + data.name + "</b><br>"+ data.message +"</div>");
+            }
+        }else{
+            $("#messages-area").append("<div class='col-md-6 "+data.position+"' style='clear:both;margin-bottom:10px;background:"+data.backcolor+";padding: 15px;border-radius: 25px'><b style='color:"+data.color+"'>" + data.name + "</b><br>"+ data.message +"</div>");
+        }
         $('#messages-area').scrollTop($('#messages-area')[0].scrollHeight);
     };
     conn.onclose = function (event) {
@@ -18,7 +30,7 @@ $(document).ready(function () {
             .removeClass('alert-success')
             .addClass('alert-danger')
             .html("<h5 class='text-center' style='margin-bottom: 0;'>OFFLINE</h5>");
-    }
+    };
     // -----------------------------------------------------
 
     // --------------------MESSAGE FORM---------------------

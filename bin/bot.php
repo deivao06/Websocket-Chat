@@ -14,27 +14,39 @@ $loop = \React\EventLoop\Factory::create();
             $msgExplode = explode(" ", $msgObj->message);
     
             if(startsWith("!", $msgExplode[0])){
-                
                 if(commandSplit($msgExplode[0]) == "card"){
                     if($msgExplode[1] == "name"){
-
                         unset($msgExplode[0]);
                         unset($msgExplode[1]);
 
                         $msgImplode = implode(" ", $msgExplode);
 
-                        $search = searchCardName($msgImplode, $cards);
+                        $search = searchCardByName($msgImplode, $cards);
                         $searchObj = [
                             "type" => "card",
                             "name" => "GADOBOT",
-                            "message" => $search
+                            "message" => $search,
+                            "colorImportant" => "black"
                         ];
                         $encodeSearch = json_encode($searchObj);
-    
+                        $conn->send($encodeSearch);
+                    }
+                    if($msgExplode[1] == "id"){
+                        unset($msgExplode[0]);
+                        unset($msgExplode[1]);
+
+                        $msgImplode = implode(" ", $msgExplode);
+                        $search = searchCardById($msgImplode,$cards);
+                        $searchObj = [
+                            "type" => "card",
+                            "name" => "GADOBOT",
+                            "message" => $search,
+                            "colorImportant" => "black"
+                        ];
+                        $encodeSearch = json_encode($searchObj);
                         $conn->send($encodeSearch);
                     }
                 }
-    
             }
         }
     });
@@ -62,7 +74,7 @@ function commandSplit($command){
     return $commandImplode;
 }
 
-function searchCardName($cardName, $cards = []){
+function searchCardByName($cardName, $cards = []){
     $encounteredCards = [];
     foreach($cards[0] as $card){
         $cardLower = strtolower($card->name);
@@ -74,6 +86,23 @@ function searchCardName($cardName, $cards = []){
         }
     }
 
+    if (count($encounteredCards) == 0){
+        return "Card não encontrado!";
+    }
+    return $encounteredCards;
+}
+
+function searchCardById($cardId, $cards = []){
+    $encounteredCards = [];
+    foreach($cards[0] as $card){
+        if($cardId == $card->id){
+            $encounteredCards[] = "misc/images/big/{$card->id}.jpg";
+        }
+    }
+
+    if (count($encounteredCards) == 0){
+        return "Card não encontrado!";
+    }
     return $encounteredCards;
 }
 

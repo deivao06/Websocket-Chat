@@ -22,10 +22,10 @@ if (!isset($_SESSION['isLogged']) || !$_SESSION['isLogged']){
         min-height: 72vh;
         max-height: 72vh;
     }
-    /*body{*/
-    /*    background-image: url("/misc/235940-descubra-as-melhores-estrategias-nutricionais-para-gado-de-corte-933x508.jpg");*/
-    /*    background-size: cover;*/
-    /*}*/
+    body{
+        background-image: url("/misc/235940-descubra-as-melhores-estrategias-nutricionais-para-gado-de-corte-933x508.jpg");
+        background-size: cover;
+    }
 </style>
 <body style="padding: 10px">
     <div class="container-fluid" style="padding-top: 25px;">
@@ -48,20 +48,6 @@ if (!isset($_SESSION['isLogged']) || !$_SESSION['isLogged']){
                         <?php } ?>
                     </ul>
                 </nav>
-                <?php if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1){ ?>
-                <br>
-                <div class="card">
-                    <div class="card-header text-center">
-                        Users Online
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <div class="card-footer text-center">
-                        Pessoas
-                    </div>
-                </div>
-                <?php } ?>
                 <br>
                 <div class="alert" role="alert" id="status"></div>
             </div>
