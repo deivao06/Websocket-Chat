@@ -1,6 +1,6 @@
 <?php
-session_start();
-require __DIR__ . '/../../bootstrap.php';
+header("Access-Control-Allow-Origin: *");
+require __DIR__ . '/../bootstrap.php';
 
 use MyApp\UserCommands;
 
@@ -26,8 +26,8 @@ if ((isset($_POST['register-username']) && trim($_POST['register-username']) != 
 
 if ($register){
     print json_encode([
-       "error" => 0,
-       "message" => "Cadastrado com Sucesso!"
+        "error" => 0,
+        "message" => "Cadastrado com Sucesso!"
     ]);
     exit;
 }else{

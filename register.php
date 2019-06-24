@@ -39,7 +39,6 @@ require 'bootstrap.php';
                         <div class="card-body">
                             <form name="register-user">
                                 <div class="form-group">
-                                    <?= \Volnix\CSRF\CSRF::getHiddenInputString('verify-register') ?>
                                     <h5><label>Nome de Usuário</label></h5>
                                     <input type="text" name="register-username" class="form-control" autocomplete="off" required>
                                 </div>

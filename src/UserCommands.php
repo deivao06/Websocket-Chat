@@ -3,6 +3,7 @@
 
 namespace MyApp;
 use MyApp\Connection;
+use PDO;
 
 class UserCommands
 {
@@ -21,7 +22,7 @@ class UserCommands
         $prepare = $this->db->connection->prepare($query);
         $prepare->execute();
 
-        return $prepare->fetchAll();
+        return $prepare->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**

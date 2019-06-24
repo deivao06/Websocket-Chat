@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8591eee8-99b6-4824-bb7f-8aa85d5a6e0a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Auth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/bot.php" beforeDir="false" afterPath="$PROJECT_DIR$/bin/bot.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/chat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/login/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/login/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/register/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/register/user.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserCommands.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserCommands.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/chat.db" beforeDir="false" afterPath="$PROJECT_DIR$/storage/chat.db" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,17 +38,6 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="chat.db" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="chat.db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="chat.db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -99,7 +86,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../e-htl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../api-aplicativo-executivo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -130,12 +117,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@9ba70fdc" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -169,7 +151,12 @@
       <workItem from="1560452815105" duration="6778000" />
       <workItem from="1560514405272" duration="89000" />
       <workItem from="1560776401448" duration="1804000" />
-      <workItem from="1560790841753" duration="5889000" />
+      <workItem from="1560790841753" duration="6719000" />
+      <workItem from="1560859822414" duration="24000" />
+      <workItem from="1560875509855" duration="2841000" />
+      <workItem from="1560885175033" duration="2746000" />
+      <workItem from="1560888251704" duration="2539000" />
+      <workItem from="1560946718218" duration="14329000" />
     </task>
     <servers />
   </component>
