@@ -59,7 +59,7 @@ class UserCommands
         $prepare = $this->db->connection->prepare($query);
 
         $prepare->execute([$username, $password]);
-        $result = $prepare->fetch();
+        $result = $prepare->fetch(PDO::FETCH_ASSOC);
 
         return $result;
     }
