@@ -31,7 +31,7 @@ $loop = \React\EventLoop\Factory::create();
                         $encodeSearch = json_encode($searchObj);
                         $conn->send($encodeSearch);
                     }
-                    if($msgExplode[1] == "id"){
+                    else if($msgExplode[1] == "id"){
                         unset($msgExplode[0]);
                         unset($msgExplode[1]);
 
@@ -46,6 +46,11 @@ $loop = \React\EventLoop\Factory::create();
                         $encodeSearch = json_encode($searchObj);
                         $conn->send($encodeSearch);
                     }
+                    else{
+                        commandNotFound($conn);
+                    }
+                }else{
+                    commandNotFound($conn);
                 }
             }
         }
@@ -55,6 +60,19 @@ $loop = \React\EventLoop\Factory::create();
     echo "Could not connect: {$e->getMessage()}\n";
 });
 $loop->run();
+
+function commandNotFound($conn){
+    $messageObj = [
+        "type" => "card",
+        "name" => "GADOBOT",
+        "message" => "Command not found!",
+        "colorImportant" => "black"
+    ];
+
+    $encodeMessage = json_encode($messageObj);
+
+    $conn->send($encodeMessage);
+}
 
 function startsWith($prefix, $msg){
     $searchPrefix = strpos($msg,$prefix);
