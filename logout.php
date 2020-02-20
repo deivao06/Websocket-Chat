@@ -1,5 +1,8 @@
 <?php
 session_start();
-setcookie('loginHash');
-session_destroy();
-header('location: index.php');
+require 'bootstrap.php';
+if (isset($_SESSION['isLogged']) && $_SESSION['isLogged'] == true){
+    $_SESSION = [];
+    session_destroy();
+    header("Location: index.php");
+}

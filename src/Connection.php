@@ -1,7 +1,8 @@
 <?php
 namespace MyApp;
 
-class Connection {
+class Connection
+{
     public $connection;
 
     public function __construct()

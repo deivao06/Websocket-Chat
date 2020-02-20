@@ -1,14 +1,16 @@
-$(document).ready(function(){
-    $("form[name='login-form']").on('submit', function(event){
+$(document).ready(function () {
+    $("form[name=login-form]").on('submit', function (event) {
         event.preventDefault();
-        
-        $.post('../ajax/login/verify-login.php', $(this).serialize(), function(response){
-            var data = JSON.parse(response);
-            if(data.error == 0){
-                window.location.replace('../../chat.php')
+        $.post("ajax/login/user.php", $(this).serialize(), function (response) {
+            var responseParsed = JSON.parse(response);
+            if (responseParsed.error === 0){
+                window.location = "/chat.php";
             }else{
-                $("#response").html(data.message);
+                $("#login-response").removeClass().html(responseParsed.message).addClass('alert alert-danger').show();
+                setTimeout(function () {
+                    $("#login-response").hide();
+                }, 2000)
             }
         })
-    })
+    });
 });

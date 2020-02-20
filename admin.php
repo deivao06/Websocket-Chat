@@ -1,52 +1,85 @@
 <?php
-require __DIR__ . '/boostrap.php';
-use MyApp\DBcommands;
+session_start();
+require 'bootstrap.php';
 
-if(!$_SESSION['logged']){
-    header('location: index.php');
+use MyApp\UserCommands;
+if (!isset($_SESSION['isAdmin']) || $_SESSION['isAdmin'] == 0){
+    header("Location: index.php");
+    exit;
 }
+$userCommands = new UserCommands;
+$users = $userCommands->all();
 
-$commands = new DBcommands;
-
-$validate = $commands->selectWhereId($_SESSION['userId']);
-$admin = $validate['admin'];
-
-if($admin == 0){
-    header('location: chat.php');
-}
-
-$users = $commands->selectAll();
 ?>
 <!DOCTYPE html>
+<html lang="pt-Br">
 <head>
     <meta charset="UTF-8">
-    <title>Admin</title>
-    <link rel="shortcut icon" href="misc/favicon.ico" />
+    <title>GADOZAP</title>
+    <link rel="stylesheet" href="misc/bootstrap/css/bootstrap.min.css">
+    <link href="misc/fontawesome/css/all.css" rel="stylesheet">
 </head>
-<body>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Password</th>
-            <th>Admin</th>
-            <th>loginHash</th>
-            <th>Options</th>
-        <?php foreach($users as $user) { ?>
-            <tr>
-                <td><?= $user['id'] ?></td>
-                <td><?= $user['name'] ?></td>
-    
-                <td><?= $user['pass'] ?></td>
-                <td><?= $user['admin'] ?></td>
-                <td><?= $user['loginHash'] ?></td>
-                <td>
-                    <a href="forms/alter-form.php?id=<?= $user['id'] ?>" class="alter">Alterar</a>
-                    <a href="ajax/delete/delete-user.php?id=<?= $user['id'] ?>" class="delete">Delete</a>
-                </td>
-            </tr>
-        <?php } ?>
-    </table>
+<style>
+    .nav-bar-stack {
+        background: white;
+    }
+    body{
+        background-image: url("/misc/235940-descubra-as-melhores-estrategias-nutricionais-para-gado-de-corte-933x508.jpg");
+        background-size: cover;
+    }
+</style>
+<body style="padding: 10px">
+    <div class="container-fluid" style="padding-top: 25px;">
+        <div class="row">
+            <div class="col-md-2" style="margin-bottom: 10px">
+                <a class="btn btn-danger" href="logout.php"><i class="fa fa-power-off"></i></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <nav>
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link nav-bar-stack" href="chat.php"><i class="fa fa-comment"></i> Chat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-bar-stack active" href="admin.php"><i class="fa fa-user-cog"></i> Admin</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-5">
+                <table class="table text-center table-bordered table-hover table-light table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Senha</th>
+                            <th>Admin</th>
+                            <th>Opções</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($users as $user){;?>
+                            <tr>
+                                <td><?= $user['name'] ?></td>
+                                <td><?= $user['pass'] ?></td>
+                                <td><?= $user['admin'] ?></td>
+                                <td>
+                                    <button userid="<?= $user['id'] ?>" class="alter-user btn btn-dark"><i class="fa fa-user-check"></i></button>
+                                    <button userid="<?= $user['id'] ?>" class="delete-user btn btn-dark"><i class="fa fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+            <div id="response" class="col-md-3">
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>
-<script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+<script src="misc/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/jquery-3.4.0.min.js"></script>
+<script src="js/admin.js"></script>
