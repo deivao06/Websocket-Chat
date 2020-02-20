@@ -12,7 +12,7 @@ $loop = \React\EventLoop\Factory::create();
         if($msgObj->name != "GADOBOT"){
             echo $msgObj->name.": ".$msgObj->message."\n";
             $msgExplode = explode(" ", $msgObj->message);
-    
+
             if(startsWith("!", $msgExplode[0])){
                 if(commandSplit($msgExplode[0]) == "card"){
                     if($msgExplode[1] == "name"){
@@ -49,8 +49,9 @@ $loop = \React\EventLoop\Factory::create();
                     else{
                         commandNotFound($conn);
                     }
-                }else{
-                    commandNotFound($conn);
+                }
+                else{
+                    commandNotFound($conn);;
                 }
             }
         }
@@ -76,8 +77,8 @@ function commandNotFound($conn){
 
 function startsWith($prefix, $msg){
     $searchPrefix = strpos($msg,$prefix);
-    
-    if($searchPrefix == 0){
+
+    if($searchPrefix === 0){
         return true;
     }else{
         return false;
