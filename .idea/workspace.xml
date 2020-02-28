@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a0f6482-65f4-4bff-900f-ee3e7eccf68b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/storage/chat.db" beforeDir="false" afterPath="$PROJECT_DIR$/storage/chat.db" afterDir="false" />
-    </list>
+    <list default="true" id="6a0f6482-65f4-4bff-900f-ee3e7eccf68b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +99,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8591eee8-99b6-4824-bb7f-8aa85d5a6e0a" name="Default Changelist" comment="" />
+      <changelist id="6a0f6482-65f4-4bff-900f-ee3e7eccf68b" name="Default Changelist" comment="" />
       <created>1558703423346</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -136,11 +134,12 @@
       <workItem from="1562006986257" duration="599000" />
       <workItem from="1562013735316" duration="5000" />
       <workItem from="1562073751137" duration="593000" />
+      <workItem from="1582228778722" duration="2453000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
